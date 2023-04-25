@@ -1,0 +1,53 @@
+<mat-toolbar class="max-w-7x1 justify-between bg-rose-500">
+    <a routerLink="home" class="text-white">Super Brugsen</a>
+    <button mat-icon-button [mat-menu-trigger-for]="menu">
+        <mat-icon
+            [matBadge]="1"
+            matBadgeColor="primary"
+        >shopping_cart</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <div class="p-3 divide-y divide-solid">
+            <div class="pb-3 flex justify-between">
+                <span class="mr-16">
+                    1 Item
+                </span>
+                <a routerLink="cart">View Cart</a>
+            </div>
+            <div class="py-3">
+                <div class="flex justify-between font-light mb-2">
+                    Fisk x 1
+                    <span class="font-bold">
+                        {{ '15' | currency }}
+                    </span>
+                </div>
+                <div class="flex justify-between font-light mb-2">
+                    Hund x 1
+                    <span class="font-bold">
+                        {{ '150' | currency }}
+                    </span>
+                </div>
+                <div class="flex justify-between font-light mb-2">
+                    Cola x 1
+                    <span class="font-bold">
+                        {{ '1' | currency }}
+                    </span>
+                </div>
+            </div>
+            <div class="flex justify-between py-3 font-light">
+                Total:
+                <span class="font-bold">
+                    {{ '166' | currency}}
+                </span>
+            </div>
+            <div class="py-3 flex justify-between">
+                <button class="bg-rose-600 text-white rounded-md w-8 h-9">
+                    <mat-icon class="py-1">delete_forever</mat-icon>
+                </button>
+                <button class="bg-green-600 text-white rounded-full w-20 h-9">
+                    Bestil nu
+                </button>
+            </div>
+        </div>
+    </mat-menu>
+</mat-toolbar>

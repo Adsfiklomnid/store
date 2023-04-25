@@ -1,0 +1,33 @@
+<mat-card class="mb-4">
+    <div class="flex justify-between">
+        <div>
+            <button mat-button [matMenuTriggerFor]="sortByMenu" class="font-medium m-4 tracking-normal">
+                <span>
+                    Sort by {{ sort }}
+                    <mat-icon class="py-1.5">expand_more</mat-icon>
+                </span>
+            </button>
+            <mat-menu #sortByMenu="matMenu">
+                <button (click)="onSortUpdated('Ascending')" mat-menu-item>
+                    Ascending
+                </button>
+                <button (click)="onSortUpdated('Descending')" mat-menu-item>
+                    Descending
+                </button>
+            </mat-menu>
+        </div>
+        <div class="flex items-center">
+            <div>
+                <button mat-button [matMenuTriggerFor]="menu" class="font-medium m-4 tracking-normal">
+                    <span>
+                        Show {{ itemsShowCount }}
+                        <mat-icon class="py-1.5">expand_more</mat-icon>
+                    </span>
+                </button>
+                <mat-menu #menu="matMenu">
+
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+</mat-card>
